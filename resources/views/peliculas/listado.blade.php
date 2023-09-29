@@ -1,3 +1,5 @@
+@include('includes.header')
+
 <!-- imprimir por pantalla -->
 
 <h1>{{$titulo}}</h1>
@@ -57,3 +59,5 @@
    <p>{{$pelicula}}</P>
 
 @endforeach
+
+@include('includes.footer')

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PeliculaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,11 @@ Route::get('/', function () {
     echo "<br/>";
     echo "<a href='pelicula'>pelicula</a>";
 });
+
+Route::get('/peliculas', [PeliculaController::class, 'index']);
+
+
+/*
 
 Route::get('mostrar-fecha', function(){
     $titulo = "Estoy mostrando la fecha";
@@ -46,8 +52,11 @@ Route::get('/listado-peliculas', function(){
     return view('/peliculas/listado')
         ->with('titulo', $titulo)
         ->with('listado_pelis', $listado);
-    
-        
-
 
 });
+
+Route::get('/pagina-generica', function(){
+    return view('pagina');
+});
+
+*/
