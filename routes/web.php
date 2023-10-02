@@ -1,7 +1,9 @@
 <?php
+use App\Http\Controllers\PeliculaController;
+use App\Http\Controllers\UsuarioController;
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PeliculaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +23,12 @@ Route::get('/', function () {
     echo "<a href='pelicula'>pelicula</a>";
 });
 
-Route::get('/peliculas', [PeliculaController::class, 'index']);
+Route::get('/peliculas/{pagina?}', [PeliculaController::class, 'index'])->name('pelicula.index');
+Route::get('/detalle', [PeliculaController::class, 'detalle']);
+
+
+
+Route::get('/usuario', [UsuarioController::class,'index']);
 
 
 /*
