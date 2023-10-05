@@ -21,11 +21,17 @@ class PeliculaController extends Controller
 
     }
 
-    public function detalle (){
+    public function detalle ($year = null){
         
         return view('pelicula/detalle');
 
+    }
 
+    public function redirigir(){
+
+        //dd("estamos en redirigir");
+        // return redirect()->route('pelicula.index');
+        return redirect()->action([PeliculaController::class, 'detalle']);
     }
     
 }

@@ -24,7 +24,11 @@ Route::get('/', function () {
 });
 
 Route::get('/peliculas/{pagina?}', [PeliculaController::class, 'index'])->name('pelicula.index');
-Route::get('/detalle', [PeliculaController::class, 'detalle']);
+
+Route::get('/detalle/{year?}', [PeliculaController::class, 'detalle'])->name('pelicula.detalle')->middleware('testyear');
+
+Route::get('/redirigir', [PeliculaController::class, 'redirigir'])->name('pelicula.redirigir');
+
 
 
 
