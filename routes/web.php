@@ -29,6 +29,9 @@ Route::get('/detalle/{year?}', [PeliculaController::class, 'detalle'])->name('pe
 
 Route::get('/redirigir', [PeliculaController::class, 'redirigir'])->name('pelicula.redirigir');
 
+Route::get('/formulario', [PeliculaController::class, 'formulario'])->name('pelicula.formulario');
+Route::post('/recibir', [PeliculaController::class, 'recibir'])->name('pelicula.recibir');
+
 
 
 

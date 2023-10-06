@@ -67,3 +67,4 @@ class Kernel extends HttpKernel
         'testyear' => \App\Http\Middleware\TestYear::class,
     ];
 }
+
