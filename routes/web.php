@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\PeliculaController;
+use App\Http\Controllers\FrutaController;
 use App\Http\Controllers\UsuarioController;
 
 use Illuminate\Support\Facades\Route;
@@ -32,10 +33,13 @@ Route::get('/redirigir', [PeliculaController::class, 'redirigir'])->name('pelicu
 Route::get('/formulario', [PeliculaController::class, 'formulario'])->name('pelicula.formulario');
 Route::post('/recibir', [PeliculaController::class, 'recibir'])->name('pelicula.recibir');
 
-
-
-
 Route::get('/usuario', [UsuarioController::class,'index']);
+
+//Ruta Frutas
+
+Route::get('/frutas', [FrutaController::class, 'index'])->name('frutas.index');
+Route::get('/frutas/detail/{id}', [FrutaController::class, 'detail'])->name('frutas.detail');
+
 
 
 /*

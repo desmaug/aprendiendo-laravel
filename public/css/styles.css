@@ -1,0 +1,16 @@
+/* En tu archivo de estilos CSS */
+.boton-personalizado {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    text-decoration: none; /* Quitar subrayado del enlace */
+    border-radius: 5px; /* Bordes redondeados */
+    border: 1px solid #4caf50; /* Borde del botón */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+}
+
+.boton-personalizado:hover {
+    background-color: #45a049; /* Cambiar el color de fondo al pasar sobre el botón */
+    border-color: #45a049; /* Cambiar el color del borde al pasar sobre el botón */
+}
