@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\DB;
 class FrutaController extends Controller
 {
     public function index(){
-        $frutas = DB::table('frutas')->get();
+        $frutas = DB::table('frutas')
+            ->orderBy('id','desc')
+            ->get();
 
         return view('fruta.index',[
             'frutas' => $frutas
@@ -23,5 +25,45 @@ class FrutaController extends Controller
             'fruta' =>$fruta
         ]);
 
+    }
+
+    public function create(){
+        return view('fruta.create');
+    }
+
+    public function save(Request $request){
+        $fruta = DB::table('frutas')->insert(array(
+            'nombre' =>$request->input('nombre'),
+            'descripcion' =>$request->input('descripcion'),
+            'precio' =>$request->input('precio'),
+            'fecha' =>date('Y-m-d')
+            
+        ));
+        return redirect()->route('frutas.index')->with('status', 'El registro ha sido creado correctamente');
+    }
+
+    public function delete($id){
+        $fruta = DB::table('frutas')->where('id', $id)->delete();
+
+        return redirect()->route('frutas.index')->with('status', 'El registro borrado correctamente');
+    }
+
+    public function edit($id){
+        $fruta = DB::table('frutas')->where('id', $id)->first();
+
+        return view('fruta.create',[
+            'fruta' => $fruta
+        ]);
+    }
+
+    public function update(Request $request){
+        $id = $request->input('id');
+        $fruta = DB::table('frutas')->where('id', $id)->update(array(
+            'nombre' =>$request->input('nombre'),
+            'descripcion' =>$request->input('descripcion'),
+            'precio' =>$request->input('precio')
+        ));
+
+        return redirect()->route('frutas.index')->with('status', 'El registro ha sido actualizado correctamente');
     }
 }

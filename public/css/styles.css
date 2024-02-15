@@ -9,6 +9,26 @@
     border: 1px solid #4caf50; /* Borde del botón */
     cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
 }
+.boton-personalizado-delete {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: red; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    text-decoration: none; /* Quitar subrayado del enlace */
+    border-radius: 5px; /* Bordes redondeados */
+    border: 1px solid red; /* Borde del botón */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+}
+.boton-personalizado-update {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00ffea; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    text-decoration: none; /* Quitar subrayado del enlace */
+    border-radius: 5px; /* Bordes redondeados */
+    border: 1px solid #00ffea; /* Borde del botón */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+}
 
 .boton-personalizado:hover {
     background-color: #45a049; /* Cambiar el color de fondo al pasar sobre el botón */

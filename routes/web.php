@@ -39,6 +39,11 @@ Route::get('/usuario', [UsuarioController::class,'index']);
 
 Route::get('/frutas', [FrutaController::class, 'index'])->name('frutas.index');
 Route::get('/frutas/detail/{id}', [FrutaController::class, 'detail'])->name('frutas.detail');
+Route::get('/frutas/crear', [FrutaController::class, 'create'])->name('frutas.crear');
+Route::post('/frutas/save', [FrutaController::class, 'save'])->name('frutas.save');
+Route::get('/frutas/delete/{id}', [FrutaController::class, 'delete'])->name('frutas.delete');
+Route::get('/frutas/edit/{id}', [FrutaController::class, 'edit'])->name('frutas.edit');
+Route::post('/frutas/update', [FrutaController::class, 'update'])->name('frutas.update');
 
 
 

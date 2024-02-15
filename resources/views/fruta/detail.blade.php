@@ -13,6 +13,8 @@
     <p>{{$fruta->descripcion}}</p>
 
     <a  href="{{ route('frutas.index')}}" class="boton-personalizado">REGRESAR</a>
+    <a  href="{{ route('frutas.delete',['id' => $fruta->id])}}" class="boton-personalizado-delete">ELIMINAR</a>
+    <a  href="{{ route('frutas.edit',['id' => $fruta->id])}}" class="boton-personalizado-update">ACTUALIZAR</a>
 
 
 </a>
